@@ -20,7 +20,13 @@ export const alphabetizeContactsByLastName = (contacts) => {
     const aLastName = aSplitName[aSplitName.length - 1];
     const bLastName = bSplitName[bSplitName.length - 1];
 
-    return aLastName.localeCompare(bLastName);
+    if (aLastName === bLastName) {
+      const aFirstName = aSplitName[0];
+      const bFirstName = bSplitName[0];
+      return aFirstName.localeCompare(bFirstName);
+    } else {
+      return aLastName.localeCompare(bLastName);
+    }
   });
 };
 
