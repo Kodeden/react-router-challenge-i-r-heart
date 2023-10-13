@@ -1,9 +1,11 @@
 import { Link, useAsyncValue } from "react-router-dom";
-import { groupContactsByLetterUsingLastNames } from "../utils.js";
+import { alphabetizeContactsByLastName, groupContactsByLetterUsingLastNames } from "../utils.js";
 
 export default function ContactsList() {
     const list = useAsyncValue();
-    const orderedList = groupContactsByLetterUsingLastNames(list);
+    const alphabeticallyOrderedContacts = alphabetizeContactsByLastName(list);
+
+    const orderedList = groupContactsByLetterUsingLastNames(alphabeticallyOrderedContacts);
 
     const keys = Object.keys(orderedList);
     const values = Object.values(orderedList);
