@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#000000] text-slate-100;
+    @apply bg-[#14213d] text-slate-100;
   }
 
   header {
