@@ -1,9 +1,10 @@
 
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements, } from "react-router-dom";
+import Layout from "./components/layout";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<div className="text-3xl font-bold underline"> Hello world!</div>} />
+    <Route path="/" element={<Layout />} ></Route>
   )
   );
 
