@@ -7,12 +7,12 @@ export default function ContactProfile() {
     <>
       <div className="m-1 flex flex-col items-center justify-center gap-3">
         <img src={contact.img} className="rounded-full" alt="Profile" />
-        <div className="text-4xl font-semibold text-[#c6d8ff]">
+        <div className="text-4xl font-semibold text-[#a37c29]">
           {" "}
           {contact.name}
         </div>
-        <div className="text-xl text-[#f2f3ae]">{contact.tel}</div>
-        <div className="text-xl text-[#9ec5ab]">{contact.email}</div>
+        <div className="text-xl text-[#b5bab5]">{contact.tel}</div>
+        <div className="text-xl text-[#b5bab5]">{contact.email}</div>
       </div>
     </>
   );
