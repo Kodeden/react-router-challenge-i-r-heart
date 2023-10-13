@@ -11,10 +11,10 @@ export default {
     return response.json();
   },
 
-  async create(newUser) {
+  async create(newContact) {
     const response = await fetch(BASE_URL, {
       method: "POST",
-      body: JSON.stringify(newUser),
+      body: JSON.stringify(newContact),
       headers: {
         "Content-Type": "application/json",
       },
@@ -22,10 +22,10 @@ export default {
     return response.json();
   },
 
-  async update(id, updatedUser) {
+  async update(id, updatedContact) {
     const response = await fetch(`${BASE_URL}/${id}`, {
       method: "PUT",
-      body: JSON.stringify(updatedUser),
+      body: JSON.stringify(updatedContact),
       headers: {
         "Content-Type": "application/json",
       },
