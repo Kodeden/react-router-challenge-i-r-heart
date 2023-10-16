@@ -1,6 +1,6 @@
 function initLetterGroups() {
   return Array.from({ length: 26 }, (_, i) =>
-    String.fromCharCode(65 + i)
+    String.fromCharCode(65 + i),
   ).reduce((groups, letter) => {
     groups[letter] = [];
     return groups;
@@ -13,7 +13,8 @@ function getFirstLetterOfLastName(name) {
 }
 
 export const alphabetizeContactsByLastName = (contacts) => {
-  return contacts.sort((a, b) => {
+  const contactsCopy = structuredClone(contacts);
+  return contactsCopy.sort((a, b) => {
     const aSplitName = a.name.split(" ");
     const bSplitName = b.name.split(" ");
 
@@ -31,7 +32,8 @@ export const alphabetizeContactsByLastName = (contacts) => {
 };
 
 export const groupContactsByLetterUsingLastNames = (contacts) => {
-  return contacts.reduce((groups, contact) => {
+  const contactsCopy = structuredClone(contacts);
+  return contactsCopy.reduce((groups, contact) => {
     const firstLetterOfLastName = getFirstLetterOfLastName(contact.name);
     groups[firstLetterOfLastName] = [
       ...(groups[firstLetterOfLastName] || []),
