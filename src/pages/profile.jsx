@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import ContactProfile from "../components/contact-profile.jsx";
+import ContactProfile from "../components/contacts/contact-profile.jsx";
 import Loading from "../components/loading";
 
 export default function Profile() {
@@ -16,4 +16,3 @@ export default function Profile() {
     </>
   );
 }
-
