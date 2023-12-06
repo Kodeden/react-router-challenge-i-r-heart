@@ -2,7 +2,7 @@ import { Link, useAsyncValue } from "react-router-dom";
 import {
   alphabetizeContactsByLastName,
   groupContactsByLetterUsingLastNames,
-} from "../utils.js";
+} from "../../utils.js";
 
 export default function ContactsList() {
   const list = useAsyncValue();
