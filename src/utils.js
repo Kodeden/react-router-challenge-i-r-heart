@@ -39,8 +39,7 @@ export const alphabetizeContactsByLastName = (contacts) => {
 };
 
 export const groupContactsByLetterUsingLastNames = (contacts) => {
-  const contactsCopy = structuredClone(contacts);
-  return contactsCopy.reduce((groups, contact) => {
+  return contacts.reduce((groups, contact) => {
     const firstLetterOfLastName = getFirstLetterOfLastName(contact.name);
     groups[firstLetterOfLastName] = [
       ...(groups[firstLetterOfLastName] || []),
