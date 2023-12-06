@@ -1,13 +1,13 @@
 import { useState } from "react";
 import {
   alphabetizeContactsByLastName,
-  groupContactsByLettersUsingLastNames,
+  groupContactsByLetterUsingLastNames,
 } from "../utils";
 
 export default function useOrganizedList(list) {
   const [search, setSearch] = useState("");
 
-  const alphabetizedOrderedList = groupContactsByLettersUsingLastNames(
+  const alphabetizedOrderedList = groupContactsByLetterUsingLastNames(
     alphabetizeContactsByLastName(
       list.filter((contact) =>
         contact.name.toLowerCase().includes(search.toLowerCase()),
