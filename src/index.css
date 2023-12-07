@@ -18,7 +18,7 @@
 
 @layer components {
   .actionButton {
-    @apply rounded-md bg-[#b5bab5] px-2 py-1 font-semibold text-[#14213d] hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d];
+    @apply m-3 rounded-md border-2 border-[#a37c29]  bg-[#14213d] px-3 py-1  font-semibold text-[#b5bab5]  hover:border-none hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d];
   }
 
   .formsInput {

@@ -19,9 +19,9 @@ export default function ContactProfile() {
         <div className="text-xl text-[#b5bab5]">{contact.email}</div>
       </main>
       <div className="flex flex-col items-center justify-center">
-        <BackButton />
         <EditButton contact={contact} />
         <DeleteButton contactId={contact.id} />
+        <BackButton />
       </div>
     </>
   );
