@@ -15,3 +15,9 @@
     @apply mt-4 text-xl font-bold;
   }
 }
+
+@layer components {
+  .actionButton {
+    @apply rounded-md bg-[#b5bab5] px-2 py-1 font-semibold text-[#14213d] hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d];
+  }
+}
