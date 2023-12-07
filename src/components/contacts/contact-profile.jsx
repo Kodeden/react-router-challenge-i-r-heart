@@ -1,5 +1,5 @@
 import { useAsyncValue } from "react-router-dom";
-import { BackButton, DeleteButton } from "../action-buttons/index.jsx";
+import { BackButton, DeleteButton, EditButton } from "../action-buttons";
 
 export default function ContactProfile() {
   const contact = useAsyncValue();
@@ -16,6 +16,7 @@ export default function ContactProfile() {
       </main>
       <div className="flex flex-col items-center justify-center">
         <BackButton />
+        <EditButton contact={contact} />
         <DeleteButton contactId={contact.id} />
       </div>
     </>
