@@ -1,5 +1,9 @@
 import { useAsyncValue } from "react-router-dom";
-import { BackButton, DeleteButton, EditButton } from "../action-buttons";
+import {
+  BackButton,
+  DeleteButton,
+  EditButton,
+} from "../action-buttons/index.jsx";
 
 export default function ContactProfile() {
   const contact = useAsyncValue();

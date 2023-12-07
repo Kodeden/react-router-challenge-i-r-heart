@@ -1,5 +1,5 @@
+import useOrganizedList from "@hooks/use-organized-list";
 import { useAsyncValue } from "react-router-dom";
-import useOrganizedList from "../../hooks/use-organized-list.js";
 import ContactName from "./contact-name.jsx";
 
 export default function ContactsList() {
@@ -10,7 +10,7 @@ export default function ContactsList() {
     <div className="flex flex-col gap-y-6 px-20">
       <input
         type="text"
-        className="m-2 w-80 rounded-md bg-[#d0d2cd] py-3 text-[#1c371b] placeholder-[#12122b]"
+        className="formsInput"
         placeholder="🔍 Search..."
         onChange={(e) => {
           setSearch(e.target.value);

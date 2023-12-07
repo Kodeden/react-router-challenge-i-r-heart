@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom";
-import ContactsList from "../components/contacts/index.jsx";
+import ContactsList from "../components/contacts";
 import Loading from "../components/loading";
 
 export default function Index() {
