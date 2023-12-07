@@ -5,22 +5,14 @@ export default function BackButton() {
 
   if (navigation.state === "loading") {
     return (
-      <div
-        to={"/"}
-        className="rounded-md bg-[#b5bab5] px-2 py-1 font-semibold text-[#14213d] hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d]"
-      >
-        {" "}
-        Back{" "}
+      <div to={"/"} className="actionButton">
+        Back
       </div>
     );
   }
   return (
-    <Link
-      to={"/"}
-      className="rounded-md bg-[#b5bab5] px-2 py-1 font-semibold text-[#14213d] hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d]"
-    >
-      {" "}
-      Back{" "}
+    <Link to={"/"} className="actionButton">
+      Back
     </Link>
   );
 }

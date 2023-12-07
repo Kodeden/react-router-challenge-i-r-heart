@@ -1,5 +1,5 @@
-import useOrganizedList from "@hooks/use-organized-list";
 import { useAsyncValue } from "react-router-dom";
+import useOrganizedList from "../../hooks/use-organized-list.js";
 import ContactName from "./contact-name.jsx";
 
 export default function ContactsList() {
@@ -24,7 +24,7 @@ export default function ContactsList() {
             </h1>
             <ul className="text-[#b5bab5]">
               {values[index].map((contact) => {
-                return <ContactName contact={contact} key={contact.id} />;
+                return <ContactName key={contact.id} contact={contact} />;
               })}
             </ul>
           </div>
