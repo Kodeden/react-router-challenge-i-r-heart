@@ -6,6 +6,11 @@ export const ButtonAction = async ({ request }) => {
   const data = Object.fromEntries(fd);
 
   switch (request.method) {
+    case "PATCH": {
+      const id = data.id;
+      apiService.update(id, data);
+      return redirect("/");
+    }
     case "DELETE": {
       apiService.delete(data.id);
       return redirect("/");
