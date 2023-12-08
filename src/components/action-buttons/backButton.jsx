@@ -6,13 +6,13 @@ export default function BackButton() {
   if (navigation.state === "loading") {
     return (
       <div to={"/"} className="actionButton">
-        Back
+        Back to Main Contacts List
       </div>
     );
   }
   return (
     <Link to={"/"} className="actionButton">
-      Back
+      Back to Main Contacts List
     </Link>
   );
 }
