@@ -7,7 +7,7 @@ import {
 import Error from "./components/error";
 import Layout from "./components/layout";
 import { ButtonAction } from "./pages/actions";
-import ContactForm from "./pages/add-contact";
+import ContactForm from "./pages/add-edit-contact";
 import Index from "./pages/index";
 import contactInformation from "./pages/loaders";
 import Profile from "./pages/profile";

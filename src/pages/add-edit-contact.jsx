@@ -1,15 +1,28 @@
+import useForm from "@hooks/use-form.js";
 import { Form, useLocation, useNavigation } from "react-router-dom";
-import { BackButton } from "../components/action-buttons/index.jsx";
+import {
+  BackButton,
+  BackToProfileButton,
+} from "../components/action-buttons/index.jsx";
 
 export default function ContactForm() {
   const { state } = useLocation();
   const stateOfButton = useNavigation();
+  const { formData, handleChange, formRef, handleCancel } = useForm({
+    name: state ? state.contact.name : "",
+    tel: state ? state.contact.tel : "",
+    email: state ? state.contact.email : "",
+  });
+
+  const isEditMode = !!state;
+  const contactId = state ? state.contact.id : null;
 
   return (
     <Form
       className={"flex flex-col items-center justify-center"}
       method={state ? "PATCH" : "POST"}
       name="contactInformation"
+      ref={formRef}
     >
       <input
         type="hidden"
@@ -24,7 +37,8 @@ export default function ContactForm() {
         name="name"
         id="contactName"
         placeholder="Enter Name"
-        defaultValue={state ? state.contact.name : ""}
+        value={formData.name}
+        onChange={handleChange}
       />
       <label htmlFor="contactPhone">Phone number</label>
       <input
@@ -33,7 +47,8 @@ export default function ContactForm() {
         name="tel"
         id="contactPhone"
         placeholder="Enter Phone Number"
-        defaultValue={state ? state.contact.tel : ""}
+        value={formData.tel}
+        onChange={handleChange}
       />
       <label htmlFor="contactEmail">Email</label>
       <input
@@ -42,7 +57,8 @@ export default function ContactForm() {
         name="email"
         id="contactEmail"
         placeholder="Enter Email Address"
-        defaultValue={state ? state.contact.email : ""}
+        value={formData.email}
+        onChange={handleChange}
       />
       <button
         className="actionButton"
@@ -50,6 +66,10 @@ export default function ContactForm() {
       >
         Save Contact
       </button>
+      <button className="actionButton" onClick={handleCancel}>
+        Clear Edits
+      </button>
+      {isEditMode && <BackToProfileButton contactId={contactId} />}
       <BackButton />
     </Form>
   );
