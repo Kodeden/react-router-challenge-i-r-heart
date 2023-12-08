@@ -1,4 +1,5 @@
 import { Form, useLocation, useNavigation } from "react-router-dom";
+import { BackButton } from "../components/action-buttons/index.jsx";
 
 export default function ContactForm() {
   const { state } = useLocation();
@@ -49,6 +50,7 @@ export default function ContactForm() {
       >
         Save Contact
       </button>
+      <BackButton />
     </Form>
   );
 }
