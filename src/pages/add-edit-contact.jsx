@@ -9,6 +9,7 @@ export default function ContactForm() {
   const { state } = useLocation();
   const stateOfButton = useNavigation();
   const { formData, handleChange, formRef, handleCancel } = useForm({
+    img: state ? state.contact.img : "",
     name: state ? state.contact.name : "",
     tel: state ? state.contact.tel : "",
     email: state ? state.contact.email : "",
@@ -29,6 +30,16 @@ export default function ContactForm() {
         name="id"
         id="id"
         value={state ? state.contact.id : ""}
+      />
+      <label htmlFor="contactImg">Image</label>
+      <input
+        className="formsInput"
+        type="url"
+        name="img"
+        id="contactImg"
+        placeholder="Enter Link to Image"
+        value={formData.img}
+        onChange={handleChange}
       />
       <label htmlFor="contactName">Name</label>
       <input
@@ -62,6 +73,7 @@ export default function ContactForm() {
       />
       <button
         className="actionButton"
+        type="submit"
         disabled={stateOfButton.state !== "idle"}
       >
         Save Contact
