@@ -13,6 +13,9 @@ export default function useForm(initialState = {}) {
 
   const resetForm = () => {
     setFormData(initialState);
+    if (formRef.current) {
+      formRef.current.reset();
+    }
   };
 
   const handleCancel = (e) => {
