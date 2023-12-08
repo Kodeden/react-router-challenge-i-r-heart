@@ -12,6 +12,10 @@ export default {
   },
 
   async create(newContact) {
+    if (!newContact.img || newContact.img === "") {
+      newContact.img = "https://picsum.photos/id/65/200/300";
+    }
+
     const response = await fetch(BASE_URL, {
       method: "POST",
       body: JSON.stringify(newContact),
