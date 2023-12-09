@@ -7,7 +7,7 @@ export default function Index() {
   const contacts = useLoaderData();
 
   return (
-    <Suspense fallsback={<Loading />}>
+    <Suspense fallback={<Loading />}>
       <Await resolve={contacts}>
         <ContactsList />
       </Await>
