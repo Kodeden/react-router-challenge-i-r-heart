@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-100;
+    @apply bg-[#14213d] text-slate-100;
   }
 
   header {
@@ -13,5 +13,15 @@
 
   h2 {
     @apply mt-4 text-xl font-bold;
+  }
+}
+
+@layer components {
+  .actionButton {
+    @apply m-3 rounded-md border-2 border-[#a37c29]  bg-[#14213d] px-3 py-1  font-semibold text-[#b5bab5]  hover:border-none hover:bg-[#a37c29] hover:font-bold  hover:text-[#14213d];
+  }
+
+  .formsInput {
+    @apply m-2 w-80 rounded-md bg-[#d0d2cd] py-3 text-[#1c371b] placeholder-[#12122b];
   }
 }
