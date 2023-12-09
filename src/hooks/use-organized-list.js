@@ -9,10 +9,8 @@ export default function useOrganizedList(list) {
 
   const alphabetizedOrderedList = groupContactsByLetterUsingLastNames(
     alphabetizeContactsByLastName(
-      list.filter(
-        (contact) =>
-          contact.name &&
-          contact.name.toLowerCase().includes(search.toLowerCase()),
+      list.filter((contact) =>
+        contact.name.toLowerCase().includes(search.toLowerCase()),
       ),
     ),
   );
@@ -20,5 +18,5 @@ export default function useOrganizedList(list) {
   const keys = Object.keys(alphabetizedOrderedList);
   const values = Object.values(alphabetizedOrderedList);
 
-  return { keys, values, setSearch };
+  return { keys, values, setSearch, search };
 }
