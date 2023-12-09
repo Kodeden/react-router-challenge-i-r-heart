@@ -7,12 +7,10 @@ export default function Profile() {
   const contact = useLoaderData();
 
   return (
-    <>
-      <Suspense fallback={<Loading />}>
-        <Await resolve={contact}>
-          <ContactProfile />
-        </Await>
-      </Suspense>
-    </>
+    <Suspense fallback={<Loading />}>
+      <Await resolve={contact}>
+        <ContactProfile />
+      </Await>
+    </Suspense>
   );
 }
