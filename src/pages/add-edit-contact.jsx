@@ -76,7 +76,7 @@ export default function ContactForm() {
         type="submit"
         disabled={stateOfButton.state !== "idle"}
       >
-        Save Contact
+        {isEditMode ? "Save Edits to Contact" : "Save Contact"}
       </button>
       <button className="actionButton" onClick={handleCancel}>
         Clear Edits
