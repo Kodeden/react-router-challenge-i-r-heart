@@ -16,6 +16,7 @@ export default function ContactsList() {
           setSearch(e.target.value);
         }}
       ></input>
+      {/* TODO{r-heart}: Move this logic into the custom 🪝. Let the component just render. */}
       {keys.map((letter, index) => {
         const hasMatchingContacts = values[index].some((contact) =>
           contact.name.toLowerCase().includes(search.toLowerCase()),

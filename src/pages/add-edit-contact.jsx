@@ -9,7 +9,11 @@ export default function ContactForm() {
   const { state } = useLocation();
   const stateOfButton = useNavigation();
   const { formData, handleChange, formRef, handleCancel } = useForm({
-    img: state ? state.contact.img : "",
+    /**
+     * TODO{r-heart}: Try refactoring ♻️ with OPTIONAL CHAINING.
+     * @ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+     */
+    img: state?.contact.img || "",
     name: state ? state.contact.name : "",
     tel: state ? state.contact.tel : "",
     email: state ? state.contact.email : "",
