@@ -71,15 +71,16 @@ export default function ContactForm() {
         value={formData.email}
         onChange={handleChange}
       />
+
+      <button className="actionButton" onClick={handleCancel}>
+        Clear Form Without Saving
+      </button>
       <button
         className="actionButton"
         type="submit"
         disabled={stateOfButton.state !== "idle"}
       >
         {isEditMode ? "Save Edits to Contact" : "Save Contact"}
-      </button>
-      <button className="actionButton" onClick={handleCancel}>
-        Clear Edits
       </button>
       {isEditMode && <BackToProfileButton contactId={contactId} />}
       <BackButton />
