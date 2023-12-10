@@ -8,15 +8,16 @@ export default function useOrganizedList(list) {
   const [search, setSearch] = useState("");
 
   const alphabetizedOrderedList = groupContactsByLetterUsingLastNames(
-    alphabetizeContactsByLastName(
-      list.filter((contact) =>
-        contact.name.toLowerCase().includes(search.toLowerCase()),
-      ),
-    ),
+    alphabetizeContactsByLastName(list),
   );
 
-  const keys = Object.keys(alphabetizedOrderedList);
-  const values = Object.values(alphabetizedOrderedList);
+  const filterContacts = (contact) =>
+    contact.name.toLowerCase().includes(search.toLowerCase());
 
-  return { keys, values, setSearch, search };
+  const keys = Object.keys(alphabetizedOrderedList);
+  const values = Object.values(alphabetizedOrderedList).map((contacts) =>
+    contacts.filter(filterContacts),
+  );
+
+  return { keys, values, setSearch };
 }

@@ -4,7 +4,7 @@ import ContactName from "./contact-name.jsx";
 
 export default function ContactsList() {
   const list = useAsyncValue();
-  const { keys, values, setSearch, search } = useOrganizedList(list);
+  const { keys, values, setSearch } = useOrganizedList(list);
 
   return (
     <div className="flex flex-col gap-y-6 px-20">
@@ -16,11 +16,9 @@ export default function ContactsList() {
           setSearch(e.target.value);
         }}
       ></input>
-      {/* TODO{r-heart}: Move this logic into the custom 🪝. Let the component just render. */}
+
       {keys.map((letter, index) => {
-        const hasMatchingContacts = values[index].some((contact) =>
-          contact.name.toLowerCase().includes(search.toLowerCase()),
-        );
+        const hasMatchingContacts = values[index].length > 0;
 
         if (hasMatchingContacts) {
           return (
