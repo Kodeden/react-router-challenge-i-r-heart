@@ -6,26 +6,22 @@ import {
 } from "../components/action-buttons/index.jsx";
 
 export default function ContactForm() {
-  const { state } = useLocation();
+  const { state: formState } = useLocation();
   const stateOfButton = useNavigation();
   const { formData, handleChange, formRef, handleCancel } = useForm({
-    /**
-     * TODO{r-heart}: Try refactoring ♻️ with OPTIONAL CHAINING.
-     * @ref: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining
-     */
-    img: state?.contact.img || "",
-    name: state ? state.contact.name : "",
-    tel: state ? state.contact.tel : "",
-    email: state ? state.contact.email : "",
+    img: formState?.contact.img || "",
+    name: formState?.contact?.name || "",
+    tel: formState?.contact?.tel || "",
+    email: formState?.contact?.email || "",
   });
 
-  const isEditMode = !!state;
-  const contactId = state ? state.contact.id : null;
+  const isEditMode = !!formState;
+  const contactId = formState?.contact?.id || null;
 
   return (
     <Form
       className={"flex flex-col items-center justify-center"}
-      method={state ? "PATCH" : "POST"}
+      method={formState ? "PATCH" : "POST"}
       name="contactInformation"
       ref={formRef}
     >
@@ -33,7 +29,7 @@ export default function ContactForm() {
         type="hidden"
         name="id"
         id="id"
-        value={state ? state.contact.id : ""}
+        value={formState?.contact?.id || ""}
       />
       <label htmlFor="contactImg">Image</label>
       <input
