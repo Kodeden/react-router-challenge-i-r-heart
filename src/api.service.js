@@ -13,7 +13,7 @@ export default {
 
   async create(newContact) {
     if (!newContact.img || newContact.img === "") {
-      newContact.img = "https://picsum.photos/id/65/200/300";
+      newContact.img = "https://picsum.photos/id/65/150/150";
     }
 
     const response = await fetch(BASE_URL, {
