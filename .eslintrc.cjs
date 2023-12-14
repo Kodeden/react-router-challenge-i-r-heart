@@ -13,7 +13,15 @@ module.exports = {
     "standard",
     "prettier",
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ["cypress/**/*.js"],
+      rules: {
+        "testing-library/await-async-queries": "off",
+        "testing-library/prefer-screen-queries": "off",
+      },
+    },
+  ],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
