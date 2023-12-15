@@ -3,7 +3,7 @@ import apiService from "../api.service";
 
 async function loaders({ params }) {
   const contacts = apiService.index();
-  const contact = apiService.show(params.id);
+  const contact = params.id ? apiService.show(params.id) : apiService.index();
 
   return defer({ contacts, contact });
 }
