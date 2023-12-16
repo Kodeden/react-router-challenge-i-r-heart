@@ -3,19 +3,19 @@ const NEW_NAME = "Joey Abrams";
 const NEW_PHONE = "555-555-5555";
 const NEW_EMAIL = "jabrams@test.com";
 
-it("adds a contact", () => {
-  // create a variable, `newContact`:
-  const newContact = {
-    id: 11,
-    name: NEW_NAME,
-    email: NEW_EMAIL,
-    tel: NEW_PHONE,
-  };
+// create a variable, `NEW_CONTACT`:
+const NEW_CONTACT = {
+  id: 11,
+  name: NEW_NAME,
+  email: NEW_EMAIL,
+  tel: NEW_PHONE,
+};
 
-  // stub the response from the server with the `newContact` object:
+it("adds a contact", () => {
+  // stub the response from the server with the `NEW-CONTACT` object:
   cy.intercept("POST", "/contacts", {
     statusCode: 201,
-    body: newContact,
+    body: NEW_CONTACT,
   }).as("createContact");
 
   // verify that we only have 10 contacts on the screen prior to navigating to to the 'Add Contact' page. Also, verify that `NEW_NAME` is not in the list:
@@ -36,7 +36,7 @@ it("adds a contact", () => {
   cy.fixture("contacts").then((contacts) => {
     cy.intercept("GET", "/contacts", {
       statusCode: 200,
-      body: [...contacts, newContact],
+      body: [...contacts, NEW_CONTACT],
     });
   });
 
